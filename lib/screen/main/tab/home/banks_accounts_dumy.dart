@@ -12,10 +12,8 @@ final bankAccountToss = BankAccount(bankTtoss, 421245);
 final bankAccountKakao =
     BankAccount(bankKakao, 600000, accountTypeName: "hi nan sanghoon");
 
-main(){
-  print(bankAccounts[4].accountTypeName);
-}
 
+//List : 순서를 보장해주는 객체의 리스트
 final bankAccounts = [
   bankAccountShinhan1,
   bankAccountShinhan2,
@@ -23,3 +21,19 @@ final bankAccounts = [
   bankAccountKakao,
   bankAccountToss,
 ];
+
+//Map  키-쌍 , 순서 x
+final bankMap = {
+ // key : value
+  "shinhan1" : bankAccountShinhan1,
+  "shinhan2" : bankAccountShinhan2,
+  "shinhan3" : bankAccountShinhan3,
+};
+/* 예시
+for (final entry in bankMap.entries){
+  print(entry.key + ":"+ (entry.value.accountTypeName ?? entry.value.bank.name);
+}*/
+
+//Set  리스트와 맵 중간지점 (데이터 존재 여부로 보통 씀)
+final bankSet = { bankAccountShinhan1, bankAccountShinhan2};
+ // 예시 print(bankSet.contains(bankshinhan1));
