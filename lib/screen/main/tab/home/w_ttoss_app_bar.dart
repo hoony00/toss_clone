@@ -1,7 +1,9 @@
 import 'package:fast_app_base/common/common.dart';
+import 'package:fast_app_base/screen/notification/s_notificaion.dart';
 import 'package:flutter/material.dart';
 
 class TtossAppBar extends StatefulWidget {
+  static const double apBarHeight = 60;
   const TtossAppBar({super.key});
 
   @override
@@ -14,7 +16,7 @@ class _TtossAppBarState extends State<TtossAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      height: TtossAppBar.apBarHeight,
       color: context.appColors.appBarBackground,
       child: Row(
         children: [
@@ -30,11 +32,12 @@ class _TtossAppBarState extends State<TtossAppBar> {
             height: 30,
           ),
           width10,
-          Tap(
+          Tap( //알림 화면
             onTap: (){
-              setState(() {
+              /*setState(() {
                 _showRedDot = !_showRedDot;
-              });
+              });*/
+              Nav.push(const NotificationScreen());
             },
             child: Stack( // 종과 빨간점을 스택으로 쌓아서 겹치게끔 보이게 해야됌
               children: [

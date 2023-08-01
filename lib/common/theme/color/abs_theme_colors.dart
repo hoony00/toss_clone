@@ -49,4 +49,9 @@ abstract class AbstractThemeColors {
   Color get roundedLaoutButtonBackground => const Color.fromARGB(255, 48, 48, 44);
   Color get buttonBackground =>
       const Color.fromARGB(255, 24, 24, 24);
+
+  Color get unreadColor => const Color.fromARGB(255, 48, 48, 48);
+
+  Color? get lessImportantText => AppColors.grey;
+
 }
