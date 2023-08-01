@@ -1,4 +1,3 @@
-import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/screen/notification/notification_dummy.dart';
 import 'package:fast_app_base/screen/notification/w_notification_item.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +12,15 @@ class NotificationScreen extends StatefulWidget {
 class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: CustomScrollView(slivers: [
+    return Scaffold(
+      body: CustomScrollView(slivers: [
         const SliverAppBar(
           title: Text('알림'),
         ),
         SliverList(delegate: SliverChildBuilderDelegate((context, index) =>
-           NotificationItemWidget(notification: notificationDummies[index]),
+           NotificationItemWidget(notification: notificationDummies[index], onTap: () {
+
+           },),
           childCount: notificationDummies.length,
         )),
       ],),
