@@ -1,7 +1,12 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/round_button_theme.dart';
+import 'package:fast_app_base/common/widget/w_big_button.dart';
 import 'package:fast_app_base/common/widget/w_round_button.dart';
+import 'package:fast_app_base/common/widget/w_rounded_Container.dart';
 import 'package:fast_app_base/screen/dialog/d_message.dart';
+import 'package:fast_app_base/screen/main/tab/home/banks_accounts_dumy.dart';
+import 'package:fast_app_base/screen/main/tab/home/vo/vo_bank_account.dart';
+import 'package:fast_app_base/screen/main/tab/home/w_bank_account.dart';
 import 'package:flutter/material.dart';
 
 import '../../../dialog/d_color_bottom.dart';
@@ -17,12 +22,29 @@ class HomeFragment extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      child: const Stack(
+      child: Stack(
         children: [
           SingleChildScrollView(
-            child: Column(),
+            padding: const EdgeInsets.only(top: 60),
+            child: Column(
+              children: [
+                BigButton(
+                  "토스뱅크",
+                  onTap: () {
+                    context.showSnackbar("토스뱅크를 눌렀어요.");
+                  },
+                ),
+                RoundedContainer(child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                  "자산".text.bold.white.size(20).make(),
+                  heigth5,
+                  ...bankAccounts.map((e)=> BankAccountWidget(e)).toList(),
+                ],))
+              ],
+            ).pSymmetric(h: 20),
           ),
-          TtossAppBar(),
+          const TtossAppBar(),
         ],
       ),
     );
