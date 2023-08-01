@@ -13,7 +13,7 @@ final bankAccountKakao =
     BankAccount(bankKakao, 600000, accountTypeName: "hi nan sanghoon");
 
 
-//List : 순서를 보장해주는 객체의 리스트
+//List : 순서를 보장해주는 객체의 리스트 // toSet , toList 등 변경 가능
 final bankAccounts = [
   bankAccountShinhan1,
   bankAccountShinhan2,
