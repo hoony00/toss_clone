@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 class DarkAppColors extends AbstractThemeColors {
   const DarkAppColors();
 
-  @override
+/*  @override
   Color get activate => Colors.white;
 
   @override
   Color get badgeBg => AppColors.darkOrange;
 
-  @override
-  Color get divider => const Color.fromARGB(255, 93, 93, 93);
+ *//* @override
+  Color get divider => const Color.fromARGB(255, 93, 93, 93);*//*
 
   @override
   Color get drawerBg => const Color.fromARGB(255, 42, 42, 42);
@@ -38,5 +38,5 @@ class DarkAppColors extends AbstractThemeColors {
   Color get confirmText => AppColors.brightBlue;
 
   @override
-  Color get blueButtonBackground => AppColors.blue;
+  Color get blueButtonBackground => AppColors.blue;*/
 }
