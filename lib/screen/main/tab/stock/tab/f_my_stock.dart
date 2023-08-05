@@ -4,6 +4,8 @@ import 'package:fast_app_base/common/widget/w_long_button.dart';
 import 'package:fast_app_base/common/widget/w_rounded_Container.dart';
 import 'package:flutter/material.dart';
 
+import 'w_interest_Stock_list.dart';
+
 class MyStockFragment extends StatelessWidget {
   const MyStockFragment({super.key});
 
@@ -51,34 +53,40 @@ class MyStockFragment extends StatelessWidget {
         ),
       );
 
-  Widget getMyStock(BuildContext context) => Container(
-    padding: const EdgeInsets.symmetric(horizontal: 20),
-        color: context.appColors.roundedLaoutButtonBackground,
-    child: Column(
-      children: [
-        heigth30,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  Widget getMyStock(BuildContext context) => Column(
+    children: [
+      Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+            color: context.appColors.roundedLaoutButtonBackground,
+        child: Column(
           children: [
-            '관심주식'.text.bold.make(),
-            '편집하기'.text.color(context.appColors.lessImportant).make(),
-          ],
-        ),
-        heigth20,
-        Tap(
-          onTap: (){context.showSnackbar('기본');},
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            child: Row(
+            heigth30,
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                '기본'.text.make(),
-                Arrow(direction: AxisDirection.up,),
+                '관심주식'.text.bold.make(),
+                '편집하기'.text.color(context.appColors.lessImportant).make(),
               ],
             ),
-          ),
+            heigth20,
+            Tap(
+              onTap: (){context.showSnackbar('기본');},
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    '기본'.text.make(),
+                    Arrow(direction: AxisDirection.up,),
+                  ],
+                ),
+              ),
+            ),
+
+          ],
         ),
-      ],
-    ),
-      );
+          ),
+      InterestStockList().pSymmetric(h: 20),
+    ],
+  );
 }
