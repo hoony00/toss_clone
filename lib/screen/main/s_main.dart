@@ -25,7 +25,8 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
 
   int get _currentIndex => tabs.indexOf(_currentTab);
 
-  GlobalKey<NavigatorState> get _currentTabNavigationKey => navigatorKeys[_currentIndex];
+  GlobalKey<NavigatorState> get
+  _currentTabNavigationKey => navigatorKeys[_currentIndex];
 
   bool get extendBody => true;
 
@@ -47,7 +48,8 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
         extendBody: extendBody, //bottomNavigationBar 아래 영역 까지 그림
         drawer: const MenuDrawer(),
         body: Padding(
-          padding: EdgeInsets.only(bottom: extendBody ? 60 - bottomNavigationBarBorderRadius : 0),
+          padding: EdgeInsets.only(
+              bottom: extendBody ? 60 - bottomNavigationBarBorderRadius : 0),
           child: SafeArea(
             bottom: !extendBody,
             child: pages,
@@ -132,7 +134,8 @@ class MainScreenState extends State<MainScreen> with SingleTickerProviderStateMi
         icon: Icon(
           key: ValueKey(label),
           activate ? iconData : inActivateIconData,
-          color: activate ? context.appColors.iconButton : context.appColors.iconButtonInactivate,
+          color: activate ?
+          context.appColors.iconButton : context.appColors.iconButtonInactivate,
         ),
         label: label);
   }

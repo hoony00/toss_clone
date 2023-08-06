@@ -2,9 +2,9 @@ import 'package:fast_app_base/common/common.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../common/widget/w_image_button.dart';
-import 'search/f_search_stock.dart';
+import 'search/s_search_stock.dart';
+import 'setting/s_setting.dart';
 import 'tab/f_my_stock.dart';
-import 'tab/f_today_discovery.dart';
 
 class StockFragment extends StatefulWidget {
   const StockFragment({super.key});
@@ -28,7 +28,7 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
             ImageButton(
               imagePath: '$basePath/icon/stock_search.png',
               onTap: () {
-                Nav.push(SearchStockFragment());
+                Nav.push(SearchStockScreen());
               },
             ),
             ImageButton(
@@ -40,7 +40,7 @@ class _StockFragmentState extends State<StockFragment> with SingleTickerProvider
             ImageButton(
               imagePath: '$basePath/icon/stock_settings.png',
               onTap: () {
-                context.showSnackbar('설정');
+                Nav.push(SettingScreen());
               },
             ),
           ],
