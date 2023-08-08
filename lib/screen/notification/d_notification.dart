@@ -8,7 +8,7 @@ import 'vo/vo_notification.dart';
 class NotificationDialog extends DialogWidget {
   final List<TtosNotification> notifications;
 
-  NotificationDialog(this.notifications, {super.key, super.animation = NavAni.Bottom});  //Top
+  NotificationDialog(this.notifications, {super.key, super.animation = NavAni.Bottom, super.barrierDismissible = false});  //Top
 
   @override
   DialogState<NotificationDialog> createState() => _NotificationDialogState();
